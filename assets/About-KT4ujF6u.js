@@ -1,0 +1,1 @@
+import{h as n,j as t,d as r}from"./index-PYI_Szk_.js";function i(){const{t:s}=n();return t.jsx(a,{children:t.jsx("div",{className:"container",children:t.jsx("h1",{children:s("about.title")})})})}const a=r.div``;export{i as default};
