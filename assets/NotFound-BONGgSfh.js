@@ -1,4 +1,4 @@
-import{h as n,j as e,L as o,d as r}from"./index-PYI_Szk_.js";function a(){const{t}=n();return e.jsxs(i,{children:[e.jsx("h1",{children:"404"}),e.jsx("p",{children:t("notFound.title")}),e.jsx(o,{to:"/",children:t("notFound.backHome")})]})}const i=r.div`
+import{h as n,j as e,L as o,d as r}from"./index-jP-ALPXK.js";function a(){const{t}=n();return e.jsxs(i,{children:[e.jsx("h1",{children:"404"}),e.jsx("p",{children:t("notFound.title")}),e.jsx(o,{to:"/",children:t("notFound.backHome")})]})}const i=r.div`
   display: flex;
   flex-direction: column;
   align-items: center;
