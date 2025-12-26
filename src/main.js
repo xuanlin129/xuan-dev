@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.js';
 import './config/index.js';
+import './stores/index.js';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

@@ -4,6 +4,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import router from './router/index.js';
 import { createGlobalStyle } from 'styled-components';
 import styledCss from './styledCss.js';
+import GlobalSpinner from './components/GlobalSpinner.js';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -15,6 +16,7 @@ function App() {
   return (
     <HelmetProvider>
       <GlobalStyle />
+      <GlobalSpinner />
       <RouterProvider router={router} />
     </HelmetProvider>
   );
