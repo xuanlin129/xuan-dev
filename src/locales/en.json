@@ -1,0 +1,16 @@
+{
+  "langs": {
+    "zh": "Chinese",
+    "en": "English"
+  },
+  "home": {
+    "title": "Home"
+  },
+  "about": {
+    "title": "About"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "backHome": "Back to Home"
+  }
+}
