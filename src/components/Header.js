@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { Bars } from '@styled-icons/fa-solid';
 import { Language, ArrowDropDown } from '@styled-icons/material';
 import * as Ant from 'antd';
 import { useTranslation } from 'react-i18next';
+import * as AppActions from '../utils/index.js';
 
 const { useBreakpoint } = Ant.Grid;
 const navItems = [
@@ -13,7 +14,6 @@ const navItems = [
 ];
 
 export default function Header() {
-  const navigate = useNavigate();
   const location = useLocation();
   const { t, i18n } = useTranslation();
 
@@ -34,9 +34,9 @@ export default function Header() {
     <Wrapper>
       <div className="container">
         <div
-          className="title"
+          className="title link"
           onClick={() => {
-            navigate('/');
+            AppActions.navigate('/');
           }}
         >
           <img src={new URL('../assets/xuan.png', import.meta.url).href} height="50" />
@@ -48,9 +48,15 @@ export default function Header() {
             <>
               <Ant.Space size={16}>
                 {navItems.map((it, idx) => (
-                  <Link to={it.path} key={idx}>
+                  <p
+                    className="link"
+                    key={idx}
+                    onClick={() => {
+                      AppActions.navigate(it.path);
+                    }}
+                  >
                     {it.name}
-                  </Link>
+                  </p>
                 ))}
               </Ant.Space>
               <Ant.Divider
@@ -103,7 +109,7 @@ export default function Header() {
           style={{ border: 'none' }}
           selectedKeys={location.pathname}
           onClick={(e) => {
-            navigate(e.key);
+            AppActions.navigate(e.key);
             setDrawer(false);
           }}
           items={navItems.map((it) => ({ key: it.path, label: it.name }))}
@@ -134,6 +140,10 @@ const Wrapper = styled.header`
     align-items: center;
     margin-right: auto;
     height: 100%;
+  }
+
+  & .link {
+    cursor: pointer;
   }
 
   & nav {
