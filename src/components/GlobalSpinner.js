@@ -16,8 +16,8 @@ export default function GlobalSpinner() {
   }
 
   return (
-    <Backdrop visible={loading}>
-      <Wrapper visible={loading}>
+    <Backdrop $visible={loading}>
+      <Wrapper $visible={loading}>
         <img className="logo" src={new URL('../assets/icon.png', import.meta.url).href} alt="spinner" />
         <div className="msg">{message || '請稍候...'}</div>
       </Wrapper>
@@ -32,10 +32,10 @@ const Backdrop = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
-  opacity: ${(props) => (props.visible ? 1 : 0)};
-  pointer-events: ${(props) => (props.visible ? 'auto' : 'none')};
+  opacity: ${(props) => (props.$visible ? 1 : 0)};
+  pointer-events: ${(props) => (props.$visible ? 'auto' : 'none')};
   transition: all 100ms;
-  backdrop-filter: ${(props) => (props.visible ? 'blur(8px)' : 'none')};
+  backdrop-filter: ${(props) => (props.$visible ? 'blur(8px)' : 'none')};
   z-index: 1001; /* antd modal: 1000 */
 `;
 
@@ -51,11 +51,11 @@ const Wrapper = styled.div`
   min-width: 200px;
   min-height: 200px;
   background-color: white;
-  opacity: ${(props) => (props.visible ? 1 : 0)};
-  pointer-events: ${(props) => (props.visible ? 'auto' : 'none')};
+  opacity: ${(props) => (props.$visible ? 1 : 0)};
+  pointer-events: ${(props) => (props.$visible ? 'auto' : 'none')};
   transition: all 200ms ease-in-out;
   border-radius: 50%;
-  box-shadow: ${(props) => (props.visible ? '1px 2px 8px rgba(0,0,0,0.7)' : 'none')};
+  box-shadow: ${(props) => (props.$visible ? '1px 2px 8px rgba(0,0,0,0.7)' : 'none')};
   z-index: 2;
 
   @keyframes infinite-spinning {
