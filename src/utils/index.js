@@ -1,4 +1,5 @@
 import { getOutlet } from 'reconnect.js';
+import router from '../router';
 
 const LoadingOutlet = getOutlet('loading');
 
@@ -13,4 +14,15 @@ function setLoading(loading, params) {
   }, 0);
 }
 
-export { delay, setLoading };
+async function navigate(path) {
+  if (router.state.location.pathname === path) {
+    console.log('path not changed');
+    return;
+  }
+  setLoading(true);
+  await delay(500);
+  router.navigate(path);
+  setLoading(false);
+}
+
+export { delay, setLoading, navigate };
